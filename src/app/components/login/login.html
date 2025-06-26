@@ -1,0 +1,18 @@
+<div style="max-width: 400px; margin: auto; padding: 1rem;">
+  <h2>Login</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Usuário</label><br />
+      <input type="text" id="username" [(ngModel)]="username" name="username" required />
+    </div>
+
+    <div style="margin-top: 1rem;">
+      <label for="password">Senha</label><br />
+      <input type="password" id="password" [(ngModel)]="password" name="password" required />
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+      <button type="submit">Entrar</button>
+    </div>
+  </form>
+</div>
