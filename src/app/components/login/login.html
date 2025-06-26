@@ -1,18 +1,16 @@
-<div style="max-width: 400px; margin: auto; padding: 1rem;">
+<div class="login-container">
   <h2>Login</h2>
-  <form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="username">Usuário</label><br />
-      <input type="text" id="username" [(ngModel)]="username" name="username" required />
-    </div>
 
-    <div style="margin-top: 1rem;">
-      <label for="password">Senha</label><br />
-      <input type="password" id="password" [(ngModel)]="password" name="password" required />
-    </div>
+  <form (ngSubmit)="onSubmit()" class="login-form">
+    <label for="username">Usuário</label>
+    <input id="username" [(ngModel)]="username" name="username" type="text" required />
 
-    <div style="margin-top: 1.5rem;">
-      <button type="submit">Entrar</button>
-    </div>
+    <label for="password">Senha</label>
+    <input id="password" [(ngModel)]="password" name="password" type="password" required />
+
+    <button type="submit">Entrar</button>
   </form>
+
+  <div *ngIf="erro" class="erro">{{ erro }}</div>
 </div>
+

@@ -16,19 +16,17 @@
 
 <table *ngIf="!carregando && clientes.length > 0" class="tabela-clientes">
   <thead>
-    <tr>
-      <th>ID</th>
+    <tr>     
       <th>Nome</th>
       <th>CPF</th>
       <th>Data de Cadastro</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let cliente of clientes">
-      <td>{{ cliente.id }}</td>
+    <tr *ngFor="let cliente of clientes">    
       <td>{{ cliente.nome }}</td>
       <td>{{ cliente.cpf }}</td>
-      <td>{{ cliente.dataCadastro | date:'dd/MM/yyyy HH:mm' }}</td>
+      <td>{{ cliente.dataCadastro | date:'dd/MM/yyyy' }}</td>
     </tr>
   </tbody>
 </table>

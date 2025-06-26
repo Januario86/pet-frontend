@@ -1,1 +1,37 @@
-<p>pet works!</p>
+<div *ngIf="carregando" class="spinner-overlay">
+  <div class="spinner"></div>
+</div>
+
+<div *ngIf="!carregando && pets.length === 0">
+  Nenhum pet encontrado.
+</div>
+
+<table *ngIf="!carregando && pets.length > 0" class="tabela-pets">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Dono</th>
+      <th>Data do Cadastro</th>
+      <th>Nome Pet</th>
+      <th>Raça</th>      
+      <th>Data de Nascimento Pet</th>     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pet of pets">
+      <td>{{ pet.id }}</td>
+      <td>{{ pet.cliente.nome }}</td>
+      <td>{{ pet.cliente.dataCadastro | date:'dd/MM/yyyy'}}</td>
+      <td>{{ pet.nome }}</td>
+      <td>{{ pet.raca.descricao }}</td>      
+      <td>{{ pet.dataNascimento | date:'dd/MM/yyyy'}}</td>     
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="erro" class="modal-overlay">
+  <div class="modal">
+    <h2>Erro</h2>
+    <p>{{ erro }}</p>
+    <button (click)="fecharModal()">Fechar</button>
+  </div>
+</div>

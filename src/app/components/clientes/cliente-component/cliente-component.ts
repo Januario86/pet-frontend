@@ -26,23 +26,15 @@ export class ClienteComponent implements OnInit {
 
   buscarClientes() {
     this.carregando = true;
-    this.erro = null;
-
-    console.log('>>> Iniciando chamada de clientes');
-
     this.clienteService.clientes().pipe(
      finalize(() => {this.carregando = false
-      console.log('Finalizou, carregando:', this.carregando);
-      this.cdr.detectChanges();
+       this.cdr.detectChanges();
      })).subscribe({
       next: (response) => {
-         console.log('>>> Resposta recebida');
-
-        this.clientes = response;       
+       this.clientes = response;       
       },
       error: (err) => {
-         console.log('>>> Erro recebido');
-       
+             
         if (err.status === 403) {
           this.erro = 'Acesso negado. Você não tem permissão para ver os clientes.';
         } else if (err.status === 401) {
@@ -50,8 +42,6 @@ export class ClienteComponent implements OnInit {
         } else {
           this.erro = 'Erro ao carregar clientes.';
         }
-
-        console.error('Erro ao carregar clientes', err);
       }
     });
   }
