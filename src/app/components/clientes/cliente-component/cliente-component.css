@@ -1,29 +1,32 @@
+/* cliente-component.css */
 .tabela-clientes {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
-  font-family: Arial, sans-serif;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.tabela-clientes th,
-.tabela-clientes td {
+.tabela-clientes th, .tabela-clientes td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 10px 14px;
   text-align: left;
 }
 
-.tabela-clientes th {
-  background-color: #f2f2f2;
-  font-weight: bold;
+.tabela-clientes thead {
+  background-color: #34495e;
+  color: white;
 }
 
-.tabela-clientes tr:nth-child(even) {
+.tabela-clientes tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-.tabela-clientes tr:hover {
+.tabela-clientes tbody tr:hover {
   background-color: #f1f1f1;
 }
+
 
 
 .erro {

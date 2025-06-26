@@ -1,9 +1,9 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
-import { ClienteService } from '../../../services/cliente.service';
 import { Cliente } from '../../../model/Cliente';
 import { CommonModule } from '@angular/common';
 import { finalize } from 'rxjs';
+import { ClienteService } from '../../../services/clientes/cliente.service';
 
 @Component({
   selector: 'app-cliente-component',
